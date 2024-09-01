@@ -30,6 +30,20 @@ export default function App() {
             title: "Informações Personagem",
           }}
         />
+        <Stack.Screen
+          component={InformacoesNaves}
+          name="InformacoesNaves"
+          options={{
+            title: "InformacoesNaves",
+          }}
+        />
+        <Stack.Screen
+          component={InformacoesFilmes}
+          name="InformacoesFilmes"
+          options={{
+            title: "InformacoesFilmes",
+          }}
+          />
      
       </Stack.Navigator>
     </NavigationContainer>
