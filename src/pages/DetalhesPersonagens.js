@@ -2,13 +2,20 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 
 export default function DetalhesPersonagens({ navigation }) {
- 
+  const irParaNaves = () => navigation.navigate("InformacoesNaves");
+  const irParaFilmes = () => navigation.navigate("InformacoesFilmes");
 
   return (
-  <View>
+  <View style={styles.container} >
     <Text>
-        Hello word
+        INFORMAÇÃO DO BONECO
     </Text>
+    <TouchableOpacity style={styles.button} onPress={irParaNaves}>
+        <Text style={styles.buttonText}>Nave</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={irParaFilmes}>
+        <Text style={styles.buttonText}>Filmes</Text>
+      </TouchableOpacity>
   </View>
   );
 }
