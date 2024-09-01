@@ -9,6 +9,7 @@ export default function DetalhesPersonagens({ navigation }) {
   <View style={styles.container} >
     <Text>
         INFORMAÇÃO DO BONECO
+
     </Text>
     <TouchableOpacity style={styles.button} onPress={irParaNaves}>
         <Text style={styles.buttonText}>Nave</Text>

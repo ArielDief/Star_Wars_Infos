@@ -20,7 +20,8 @@ export default function App() {
           component={Home}
           name="Home"
           options={{
-            headerShown: false,
+            headerShown: true,
+            title: "Personagens"
           }}
         />
         <Stack.Screen
