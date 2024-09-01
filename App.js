@@ -4,11 +4,14 @@ import Home from "./src/pages/Home";
 import DetalhesPersonagens from "./src/pages/DetalhesPersonagens";
 import InformacoesFilmes from "./src/pages/InformacoesFilmes";
 import InformacoesNaves from "./src/pages/InformacoesNaves";
-
+import { Button } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function App() { 
+  function sobreTrabalho(){
+    alert ("Ariel Diefenthaeler Oliveira " + "RA:1134433 " + "email: 1134433@atitus.edu.br "+ "\n"+ "Ábner Panazollo " + "RA:1134868 " + "email: 1134868@atitus.edu.br")
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -16,12 +19,17 @@ export default function App() {
           headerTitleAlign: "center",
         }}
       >
-        <Stack.Screen
+      <Stack.Screen
           component={Home}
           name="Home"
           options={{
             headerShown: true,
-            title: "Personagens"
+            title: "Personagens",
+            headerRight: () => (
+              <Button
+              title="Sobre"
+              onPress={() => sobreTrabalho()} />
+            )
           }}
         />
         <Stack.Screen
@@ -35,14 +43,14 @@ export default function App() {
           component={InformacoesNaves}
           name="InformacoesNaves"
           options={{
-            title: "InformacoesNaves",
+            title: "Informações Naves",
           }}
         />
         <Stack.Screen
           component={InformacoesFilmes}
           name="InformacoesFilmes"
           options={{
-            title: "InformacoesFilmes",
+            title: "Informações Filmes",
           }}
           />
      
