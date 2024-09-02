@@ -8,6 +8,7 @@ import { Button } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
+
 export default function App() { 
   function sobreTrabalho(){
     alert ("Ariel Diefenthaeler Oliveira " + "RA:1134433 " + "email: 1134433@atitus.edu.br "+ "\n"+ "Ábner Panazollo " + "RA:1134868 " + "email: 1134868@atitus.edu.br")
