@@ -4,7 +4,7 @@ import Home from "./src/pages/Home";
 import DetalhesPersonagens from "./src/pages/DetalhesPersonagens";
 import InformacoesFilmes from "./src/pages/InformacoesFilmes";
 import InformacoesNaves from "./src/pages/InformacoesNaves";
-import { Button } from "react-native";
+import { Button, Text } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,13 +14,18 @@ export default function App() {
     alert ("Ariel Diefenthaeler Oliveira " + "RA:1134433 " + "email: 1134433@atitus.edu.br "+ "\n"+ "Ábner Panazollo " + "RA:1134868 " + "email: 1134868@atitus.edu.br")
   }
   return (
+    
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: '#000000',
+          },
+          headerTintColor: '#ffffff', 
         }}
       >
-      <Stack.Screen
+        <Stack.Screen
           component={Home}
           name="Home"
           options={{
@@ -28,8 +33,9 @@ export default function App() {
             title: "Personagens",
             headerRight: () => (
               <Button
-              title="Sobre"
-              onPress={() => sobreTrabalho()} />
+                title="Sobre"
+                onPress={() => sobreTrabalho()}
+              />
             )
           }}
         />
@@ -53,8 +59,7 @@ export default function App() {
           options={{
             title: "Informações Filmes",
           }}
-          />
-     
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

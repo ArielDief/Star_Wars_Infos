@@ -6,7 +6,7 @@ export default function DetalhesPersonagens({ navigation }) {
   const irParaFilmes = () => navigation.navigate("InformacoesFilmes");
 
   return (
-  <View style={styles.container} >
+    <View style={[styles.container, { backgroundColor: '#000000' }]}> 
     <Text>
         INFORMAÇÃO DO BONECO
 
@@ -31,14 +31,15 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
-    height: 60,
+    width: 400,
+    height: 100,
     borderWidth: 1,
     borderRadius: 5,
-    backgroundColor: "#f58733",
+    backgroundColor: "#FFFF00",
     marginBottom: 10,
   },
   buttonText: {
+    color:"#000000",
     fontSize: 22,
     fontWeight: "600",
   },

@@ -5,12 +5,12 @@ export default function InformacoesFilmes({ navigation }){
   
 
     return (
-        <View style={styles.container} >
-          <Text>
-              INFORMAÇÃO DOS FILMES
-          </Text>
-        </View>
-        );
+      <View style={[styles.container, { backgroundColor: '#000000' }]}> 
+                <Text style={{color: '#ffffff'}}>
+                     INFORMAÇÃO DOS FILMES
+                </Text>
+               </View>
+             );
 }
 const styles = StyleSheet.create({
   container: {
@@ -22,14 +22,15 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
-    height: 60,
+    width: 400,
+    height: 100,
     borderWidth: 1,
     borderRadius: 5,
-    backgroundColor: "#f58733",
+    backgroundColor: "#FFFF00",
     marginBottom: 10,
   },
   buttonText: {
+    color:"#000000",
     fontSize: 22,
     fontWeight: "600",
   },
