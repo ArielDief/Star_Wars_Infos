@@ -1,18 +1,17 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
-import backgroundImage from '../imagens/imagemFundo.jpg/';
-import { ImageBackground } from "react-native-web";
+
 
 export default function Home({ navigation }) {
   const irParaDetalhesPersonagens = () => navigation.navigate("DetalhesPersonagens");
 
-
+ 
 
 
   return (
-    <ImageBackground source= {backgroundImage} style={styles.backgroundImage}>
+    
 
-      <View style={[styles.container]}>
+      <View style={[styles.container, { backgroundColor: '#000000' }]}> 
 
         <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
           <Text style={styles.buttonText}>Luke Skywalker</Text>
@@ -33,7 +32,7 @@ export default function Home({ navigation }) {
           <Text style={styles.buttonText}>Chewbacca</Text>
         </TouchableOpacity>
       </View>
-    </ImageBackground>
+  
 
   );
 }

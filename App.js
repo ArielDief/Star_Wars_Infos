@@ -6,6 +6,7 @@ import InformacoesFilmes from "./src/pages/InformacoesFilmes";
 import InformacoesNaves from "./src/pages/InformacoesNaves";
 import { Button, Text } from "react-native";
 
+
 const Stack = createNativeStackNavigator();
 
 
