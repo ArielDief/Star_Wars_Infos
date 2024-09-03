@@ -21,7 +21,6 @@ export default function Home({ navigation }) {
         <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
           <Text style={styles.buttonText}>Darth Vader</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
           <Text style={styles.buttonText}>Han Solo</Text>
         </TouchableOpacity>
