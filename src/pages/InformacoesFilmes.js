@@ -24,16 +24,21 @@ export default function InformacoesFilmes({ navigation, route }) {
 
   return (
     <View style={[styles.container, { backgroundColor: '#fff' }]}>
+      <Text>Filmes</Text>
       {filmes.map(filme => {
         return (
           <View>
-            <Text>{filme.director}</Text>
+
+            <Text>Título: {filme.title}</Text>
+            <Text>Diretor: {filme.director}</Text>
+            <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
 
           </View>
         )
       })}
       <Text style={{ color: '#ffffff' }}>
         INFORMAÇÃO DOS FILMES
+
       </Text>
     </View>
   );

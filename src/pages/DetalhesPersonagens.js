@@ -29,6 +29,9 @@ export default function DetalhesPersonagens({ navigation, route }) {
       <Text>Genero: {persongemSelecionado.gender}</Text>
       <Text>Altura: {persongemSelecionado.height}</Text>
       <Text>Cor dos Olhos: {persongemSelecionado.eye_color}</Text>
+      <Text>Cor do Cabelo: {persongemSelecionado.hair_color}</Text>
+      <Text>Cor da Pele: {persongemSelecionado.skin_color}</Text>
+      <Text>Peso: {persongemSelecionado.mass}</Text>
 
       <TouchableOpacity style={styles.button} onPress={() => irParaNaves(persongemSelecionado)}>
         <Text style={styles.buttonText}>Nave</Text>
