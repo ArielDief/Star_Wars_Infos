@@ -3,36 +3,33 @@ import React from "react";
 
 
 export default function Home({ navigation }) {
-  const irParaDetalhesPersonagens = () => navigation.navigate("DetalhesPersonagens");
-
- 
-
+  const irParaDetalhesPersonagens = (nomePersonagem) => navigation.navigate("DetalhesPersonagens", { nome: nomePersonagem });
 
   return (
-    
 
-      <View style={[styles.container, { backgroundColor: '#000000' }]}> 
 
-        <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
-          <Text style={styles.buttonText}>Luke Skywalker</Text>
-        </TouchableOpacity>
+    <View style={[styles.container, { backgroundColor: '#000000' }]}>
 
-        <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
-          <Text style={styles.buttonText}>Darth Vader</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
-          <Text style={styles.buttonText}>Han Solo</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => irParaDetalhesPersonagens("Luke Skywalker")}>
+        <Text style={styles.buttonText}>Luke Skywalker</Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
-          <Text style={styles.buttonText}>Yoda</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => irParaDetalhesPersonagens("Darth Vader")}>
+        <Text style={styles.buttonText}>Darth Vader</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => irParaDetalhesPersonagens("Han Solo")}>
+        <Text style={styles.buttonText}>Han Solo</Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={irParaDetalhesPersonagens}>
-          <Text style={styles.buttonText}>Chewbacca</Text>
-        </TouchableOpacity>
-      </View>
-  
+      <TouchableOpacity style={styles.button} onPress={() => irParaDetalhesPersonagens("Yoda")}>
+        <Text style={styles.buttonText}>Yoda</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => irParaDetalhesPersonagens("Chewbacca")}>
+        <Text style={styles.buttonText}>Chewbacca</Text>
+      </TouchableOpacity>
+    </View>
+
 
   );
 }
