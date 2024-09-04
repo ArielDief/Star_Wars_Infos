@@ -1,16 +1,42 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function InformacoesFilmes({ navigation }){
-  
+export default function InformacoesFilmes({ navigation, route }) {
+  const { personagem } = route.params
+  const [filmes, setFilmes] = useState(null);
 
-    return (
-      <View style={[styles.container, { backgroundColor: '#000000' }]}> 
-                <Text style={{color: '#ffffff'}}>
-                     INFORMAÇÃO DOS FILMES
-                </Text>
-               </View>
-             );
+  useEffect(() => {
+    obterFilme();
+  }, [])
+
+  async function obterFilme() {
+    console.log(personagem.films)
+    const response = personagem.films.map((film) => axios.get(film))
+    const responses = await Promise.all(response)
+    console.log(responses)
+    setFilmes(responses.map(r => r.data))
+  }
+
+  if (!filmes) {
+    return <ActivityIndicator size={"large"} />
+  }
+
+  return (
+    <View style={[styles.container, { backgroundColor: '#fff' }]}>
+      {filmes.map(filme => {
+        return (
+          <View>
+            <Text>{filme.director}</Text>
+
+          </View>
+        )
+      })}
+      <Text style={{ color: '#ffffff' }}>
+        INFORMAÇÃO DOS FILMES
+      </Text>
+    </View>
+  );
 }
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonText: {
-    color:"#000000",
+    color: "#000000",
     fontSize: 22,
     fontWeight: "600",
   },

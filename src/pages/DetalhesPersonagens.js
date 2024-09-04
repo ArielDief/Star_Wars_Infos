@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function DetalhesPersonagens({ navigation, route }) {
-  const irParaNaves = (persongem) => navigation.navigate("InformacoesNaves", { personagem: persongem });
-  const irParaFilmes = () => navigation.navigate("InformacoesFilmes");
+  const irParaNaves = (personagem) => navigation.navigate("InformacoesNaves", { personagem: personagem });
+  const irParaFilmes = (personagem) => navigation.navigate("InformacoesFilmes", { personagem: personagem });
   const { nome } = route.params
   const [persongemSelecionado, setPersonagemSelecionado] = useState(null)
 
@@ -33,7 +33,7 @@ export default function DetalhesPersonagens({ navigation, route }) {
       <TouchableOpacity style={styles.button} onPress={() => irParaNaves(persongemSelecionado)}>
         <Text style={styles.buttonText}>Nave</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={irParaFilmes}>
+      <TouchableOpacity style={styles.button} onPress={() => irParaFilmes(persongemSelecionado)}>
         <Text style={styles.buttonText}>Filmes</Text>
       </TouchableOpacity>
     </View>
