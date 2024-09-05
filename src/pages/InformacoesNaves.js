@@ -28,24 +28,21 @@ export default function
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: '#fff' }]}>
+    <View style={[styles.container, { backgroundColor: '#000000' }]}>
       <Text>NAVES</Text>
       {naves !== null && naves.length > 0 ? (
         naves.map((nave) => (
           <View key={nave.name}> { }
-            <Text>Nome:{nave.name}</Text>
-            <Text>Modelo:{nave.model}</Text>
-            <Text>Equipe:{nave.crew}</Text>
-            <Text>Passageiros:{nave.passengers}</Text>
+            <Text style={styles.text}>Nome:{nave.name}</Text>
+            <Text style={styles.text}>Modelo:{nave.model}</Text>
+            <Text style={styles.text}>Equipe:{nave.crew}</Text>
+            <Text style={styles.text}>Passageiros:{nave.passengers}</Text>
             <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
           </View>
         ))
       ) : (
         <Text>Não há naves disponíveis.</Text>
       )}
-      <Text style={{ color: '#ffffff' }}>
-        INFORMAÇÃO DOS NAVES
-      </Text>
     </View>
   );
 }
@@ -72,5 +69,9 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 22,
     fontWeight: "600",
+  },
+  text:{
+    color:"white",
+    fontSize:35,
   },
 });

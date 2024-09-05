@@ -1,6 +1,10 @@
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+<style>
+import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
+</style>
+
 
 export default function DetalhesPersonagens({ navigation, route }) {
   const irParaNaves = (personagem) => navigation.navigate("InformacoesNaves", { personagem: personagem });
@@ -23,15 +27,16 @@ export default function DetalhesPersonagens({ navigation, route }) {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: '#fff' }]}>
+    <View style={[styles.container, { backgroundColor: '#000000' }]}>
 
-      <Text>Nome: {persongemSelecionado.name}</Text>
-      <Text>Genero: {persongemSelecionado.gender}</Text>
-      <Text>Altura: {persongemSelecionado.height}</Text>
-      <Text>Cor dos Olhos: {persongemSelecionado.eye_color}</Text>
-      <Text>Cor do Cabelo: {persongemSelecionado.hair_color}</Text>
-      <Text>Cor da Pele: {persongemSelecionado.skin_color}</Text>
-      <Text>Peso: {persongemSelecionado.mass}</Text>
+      <Text style={styles.text}>Nome: {persongemSelecionado.name}</Text>
+      <Text style={styles.text}>Genero: {persongemSelecionado.gender}</Text>
+      <Text style={styles.text}>Altura: {persongemSelecionado.height}</Text>
+      <Text style={styles.text}>Cor dos Olhos: {persongemSelecionado.eye_color}</Text>
+      <Text style={styles.text}>Cor do Cabelo: {persongemSelecionado.hair_color}</Text>
+      <Text style={styles.text}>Cor da Pele: {persongemSelecionado.skin_color}</Text>
+      <Text style={styles.text}>Peso: {persongemSelecionado.mass}</Text>
+      <Text> </Text>
 
       <TouchableOpacity style={styles.button} onPress={() => irParaNaves(persongemSelecionado)}>
         <Text style={styles.buttonText}>Nave</Text>
@@ -64,5 +69,10 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 22,
     fontWeight: "600",
+  },
+  text:{
+    color:"white",
+    fontSize:35,
+    fontFamily:"",
   },
 });

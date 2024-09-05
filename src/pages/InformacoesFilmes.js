@@ -23,24 +23,21 @@ export default function InformacoesFilmes({ navigation, route }) {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: '#fff' }]}>
+    <View style={[styles.container, { backgroundColor: '#000000' }]}>
       <Text>Filmes</Text>
       {filmes.map(filme => {
         return (
           <View>
 
-            <Text>Título: {filme.title}</Text>
-            <Text>Diretor: {filme.director}</Text>
-            <Text>Data de lançamento: {filme.release_date}</Text>
+            <Text style={styles.text}>Título: {filme.title}</Text>
+            <Text style={styles.text}>Diretor: {filme.director}</Text>
+            <Text style={styles.text}>Data de lançamento: {filme.release_date}</Text>
             <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
+            
 
           </View>
         )
       })}
-      <Text style={{ color: '#ffffff' }}>
-        INFORMAÇÃO DOS FILMES
-
-      </Text>
     </View>
   );
 }
@@ -65,5 +62,9 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 22,
     fontWeight: "600",
+  },
+  text:{
+    color:"white",
+    fontSize:35,
   },
 });
