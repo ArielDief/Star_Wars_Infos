@@ -1,44 +1,55 @@
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import
+axios from "axios";
 
-export default function InformacoesNaves({ navigation, route }) {
-  const { personagem } = route.params
+export default function
+  InformacoesNaves({ navigation, route }) {
+  const { personagem } = route.params;
   const [naves, setNaves] = useState(null);
 
   useEffect(() => {
     obterNave();
-  }, [])
+  }, []);
 
   async function obterNave() {
-    console.log(personagem.starships)
-    const response = personagem.starships.map((starchip) => axios.get(starchip))
-    const responses = await Promise.all(response)
-    console.log(responses)
-    setNaves(responses.map(r => r.data))
-  }
+    console.log(personagem.starships);
 
-  if (!naves) {
-    return <ActivityIndicator size={"large"} />
+
+    if (!personagem.starships || personagem.starships.length === 0) {
+      setNaves([]);
+      return;
+    }
+
+    const response = personagem.starships.map((starship) => axios.get(starship));
+    const responses = await Promise.all(response);
+    console.log(responses);
+    setNaves(responses.map((r) => r.data));
   }
 
   return (
     <View style={[styles.container, { backgroundColor: '#fff' }]}>
-      {naves.map(nave => {
-        return (
-          <View>
-            <Text>{nave.name}</Text>
-            <Text>{nave.model}</Text>
-            <Text>{nave.crew}</Text>
+      <Text>NAVES</Text>
+      {naves !== null && naves.length > 0 ? (
+        naves.map((nave) => (
+          <View key={nave.name}> { }
+            <Text>Nome:{nave.name}</Text>
+            <Text>Modelo:{nave.model}</Text>
+            <Text>Equipe:{nave.crew}</Text>
+            <Text>Passageiros:{nave.passengers}</Text>
+            <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
           </View>
-        )
-      })}
+        ))
+      ) : (
+        <Text>Não há naves disponíveis.</Text>
+      )}
       <Text style={{ color: '#ffffff' }}>
         INFORMAÇÃO DOS NAVES
       </Text>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -46,7 +57,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
   },
-  button: {
+  button:
+  {
     justifyContent: "center",
     alignItems: "center",
     width: 400,

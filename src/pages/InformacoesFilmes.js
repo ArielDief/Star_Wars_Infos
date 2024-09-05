@@ -31,6 +31,7 @@ export default function InformacoesFilmes({ navigation, route }) {
 
             <Text>Título: {filme.title}</Text>
             <Text>Diretor: {filme.director}</Text>
+            <Text>Data de lançamento: {filme.release_date}</Text>
             <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
 
           </View>
