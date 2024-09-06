@@ -1,9 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-<style>
-import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
-</style>
+
 
 
 export default function DetalhesPersonagens({ navigation, route }) {
@@ -72,7 +70,6 @@ const styles = StyleSheet.create({
   },
   text:{
     color:"white",
-    fontSize:35,
-    fontFamily:"",
+    fontSize:30,
   },
 });

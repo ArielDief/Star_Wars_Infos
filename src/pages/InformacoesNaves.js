@@ -37,11 +37,12 @@ export default function
             <Text style={styles.text}>Modelo:{nave.model}</Text>
             <Text style={styles.text}>Equipe:{nave.crew}</Text>
             <Text style={styles.text}>Passageiros:{nave.passengers}</Text>
+            <Text>  </Text>
             <View style={{ borderWidth: 1, width: "100%", marginBottom: 10 }} />
           </View>
         ))
       ) : (
-        <Text>Não há naves disponíveis.</Text>
+        <Text style={styles.text}>Não há naves disponíveis.</Text>
       )}
     </View>
   );
@@ -72,6 +73,6 @@ const styles = StyleSheet.create({
   },
   text:{
     color:"white",
-    fontSize:35,
+    fontSize:30,
   },
 });
